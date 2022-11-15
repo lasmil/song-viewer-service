@@ -19,7 +19,7 @@
     "fastify-plugin": "^4.0.0",
     "fetch": "^1.1.0",
     "fluent-json-schema": "^4.0.0",
-    "node-fetch": "^3.2.10",
+    "node-fetch": "^3.3.0",
     "nodeplotlib": "^1.1.2",
     "pino": "^8.0.0",
     "pino-pretty": "^9.0.0",
