@@ -5,8 +5,8 @@ import { BUFFER_SIZE } from '../../constants.js'
 
 import { createAudioBuffer } from './utils.js'
 
-export async function getFrequencyArray(fileUri) {
-  if (!fileUri) {
+export async function getFrequencyArray({ fileUri, songPart, totalParts }) {
+  if (!fileUri || !songPart || !totalParts) {
     throw new Error('No file provided')
   }
   const audioURL = fileUri
@@ -22,7 +22,7 @@ export async function getFrequencyArray(fileUri) {
   const channelData = audioBuffer.getChannelData(0)
   let audioData = Array.prototype.slice.call(channelData) // convert Float32Array to normal array
 
-  let l = audioData.length
+  let l = parseInt(audioData.length * songPart) / totalParts
   const frequencies = []
 
   const { Pitch } = await aubio()
@@ -49,6 +49,26 @@ export async function getFrequencyArray(fileUri) {
   // plotFrequencies(frequencies)
   return {
     frequencies,
+    duration: parseInt(audioBuffer?.duration || 0)
+  }
+}
+
+export async function getSongDuration(fileUri) {
+  if (!fileUri) {
+    throw new Error('No file provided')
+  }
+  const audioURL = fileUri
+  const audioCtx = new AudioContext()
+
+  const fileFrom = (...args) =>
+    import('node-fetch').then(({ fileFrom }) => fileFrom(...args))
+
+  const audioFile = await fileFrom(audioURL).then(response =>
+    response.arrayBuffer()
+  )
+  const audioBuffer = await createAudioBuffer(audioCtx, audioFile)
+
+  return {
     duration: parseInt(audioBuffer?.duration || 0)
   }
 }

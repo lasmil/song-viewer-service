@@ -4,7 +4,3 @@ export const SAMPLE_MP3_SOUNDS = {
   1: 'https://freesound.org/data/previews/328/328857_230356-lq.mp3',
   2: 'https://soundadventurer.com/wp-content/uploads/2020/09/standard.mp3'
 }
-export const EXTRACTION_PRECISION = {
-  PRECISE: 2,
-  FAST: 1
-}
