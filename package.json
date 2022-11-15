@@ -1,0 +1,49 @@
+{
+  "name": "song-viewer-service",
+  "description": "Song Viewer Service",
+  "version": "1.0.0",
+  "main": "./index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ./index.js",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@fastify/cors": "^8.0.0",
+    "@fastify/multipart": "^7.3.0",
+    "@fastify/static": "^6.5.0",
+    "aubiojs": "^0.2.1",
+    "env-schema": "^5.0.0",
+    "fastify": "^4.0.2",
+    "fastify-cli": "^5.0.0",
+    "fastify-plugin": "^4.0.0",
+    "fetch": "^1.1.0",
+    "fluent-json-schema": "^4.0.0",
+    "node-fetch": "^3.2.10",
+    "nodeplotlib": "^1.1.2",
+    "pino": "^8.0.0",
+    "pino-pretty": "^9.0.0",
+    "web-audio-api": "^0.2.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.2.0",
+    "@commitlint/config-conventional": "^17.2.0",
+    "babel-eslint": "^10.1.0",
+    "eslint-config-prettier": "^8.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint": "^8.26.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.3",
+    "newman-reporter-htmlextra": "^1.20.4",
+    "newman": "^5.2.3",
+    "prettier": "^2.1.2",
+    "tap": "^16.0.0",
+    "wait-on": "^6.0.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": "eslint --cache --fix"
+  }
+}
