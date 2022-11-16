@@ -47,10 +47,7 @@ export async function getFrequencyArray({ fileUri, songPart, totalParts }) {
   }
 
   // plotFrequencies(frequencies)
-  return {
-    frequencies,
-    duration: parseInt(audioBuffer?.duration || 0)
-  }
+  return frequencies
 }
 
 export async function getSongDuration(fileUri) {

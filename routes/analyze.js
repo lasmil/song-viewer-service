@@ -28,6 +28,8 @@ export default async fastify => {
   fastify.post('/api/getFrequencyArray', async (request, reply) => {
     const files = await request.saveRequestFiles()
 
+    const { songpart, totalparts } = request.headers
+
     // check if every file in the files array is an audio type file
     const isAudio =
       files &&
@@ -39,8 +41,8 @@ export default async fastify => {
     }
     const frequencyArray = await getFrequencyArray({
       fileUri: files[0].filepath,
-      songPart: request.body.songPart,
-      totalParts: request.body.totalParts
+      songPart: songpart,
+      totalParts: totalparts
     })
     reply
       .code(200)
