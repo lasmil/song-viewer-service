@@ -1,7 +1,7 @@
 import { AudioContext } from 'web-audio-api'
 import aubio from 'aubiojs'
 
-import { BUFFER_SIZE } from '../../constants.js'
+import { BUFFER_SIZE, MINIMUM_BUFFER_SIZE } from '../../constants.js'
 
 import { createAudioBuffer } from './utils.js'
 
@@ -23,10 +23,11 @@ export async function getFrequencyArray({ fileUri, songPart, totalParts }) {
   let audioData = Array.prototype.slice.call(channelData) // convert Float32Array to normal array
 
   let l = parseInt(audioData.length * songPart) / totalParts
+  const bufferSize = l < BUFFER_SIZE ? MINIMUM_BUFFER_SIZE : BUFFER_SIZE
   const frequencies = []
 
   const { Pitch } = await aubio()
-  const scriptProcessor = audioCtx.createScriptProcessor(BUFFER_SIZE, 1, 1)
+  const scriptProcessor = audioCtx.createScriptProcessor(bufferSize, 1, 1)
 
   const pitchDetector = new Pitch(
     'fcomb',
@@ -36,14 +37,14 @@ export async function getFrequencyArray({ fileUri, songPart, totalParts }) {
   )
 
   while (l > 0) {
-    const audioFrame = audioData.splice(audioData.length - l, BUFFER_SIZE)
+    const audioFrame = audioData.splice(audioData.length - l, bufferSize)
     let frequency = 0
-    if (audioFrame.length === BUFFER_SIZE) {
+    if (audioFrame.length === bufferSize) {
       frequency = pitchDetector.do(audioFrame)
     }
 
     frequencies.push(frequency)
-    l = l - BUFFER_SIZE
+    l = l - bufferSize
   }
 
   // plotFrequencies(frequencies)
