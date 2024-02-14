@@ -14,7 +14,7 @@
     "@fastify/multipart": "^8.1.0",
     "@fastify/static": "^7.0.1",
     "aubiojs": "^0.2.1",
-    "dotenv": "^16.4.3",
+    "dotenv": "^16.4.4",
     "env-schema": "^5.2.1",
     "fastify": "^4.26.0",
     "fastify-cli": "^6.1.1",
