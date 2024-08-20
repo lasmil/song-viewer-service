@@ -34,7 +34,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^7.1.0",
-    "husky": "^9.1.4",
+    "husky": "^9.1.5",
     "lint-staged": "^15.2.9",
     "newman": "^6.2.1",
     "newman-reporter-htmlextra": "^1.23.1",
