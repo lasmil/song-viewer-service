@@ -16,7 +16,7 @@
     "aubiojs": "^0.2.1",
     "dotenv": "^16.4.7",
     "env-schema": "^6.0.0",
-    "fastify": "^5.1.0",
+    "fastify": "^5.2.0",
     "fastify-cli": "^7.1.0",
     "fastify-plugin": "^5.0.1",
     "fetch": "^1.1.0",
