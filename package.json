@@ -36,7 +36,7 @@
     "eslint-plugin-promise": "^7.2.1",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
-    "newman": "^6.2.1",
+    "newman": "^6.2.2",
     "newman-reporter-htmlextra": "^1.23.1",
     "prettier": "^2.8.8",
     "tap": "^21.5.0",
