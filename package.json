@@ -22,7 +22,7 @@
     "fetch": "^1.1.0",
     "node-fetch": "^3.3.2",
     "nodeplotlib": "^1.1.2",
-    "web-audio-api": "^1.5.1"
+    "web-audio-api": "^1.5.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^21.2.1",
