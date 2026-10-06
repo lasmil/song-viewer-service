@@ -40,7 +40,7 @@
     "newman-reporter-htmlextra": "^1.23.1",
     "prettier": "^2.8.8",
     "tap": "^21.8.0",
-    "wait-on": "^9.5.0"
+    "wait-on": "^9.5.1"
   },
   "lint-staged": {
     "*.{js,jsx}": "eslint --cache --fix"
