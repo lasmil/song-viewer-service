@@ -10,7 +10,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@fastify/cors": "^11.3.1",
+    "@fastify/cors": "^11.4.0",
     "@fastify/multipart": "^10.1.7",
     "@fastify/static": "^10.1.8",
     "aubiojs": "^0.2.1",
