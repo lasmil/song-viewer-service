@@ -12,7 +12,7 @@
   "dependencies": {
     "@fastify/cors": "^11.4.3",
     "@fastify/multipart": "^10.1.9",
-    "@fastify/static": "^10.1.11",
+    "@fastify/static": "^10.1.12",
     "aubiojs": "^0.2.1",
     "dotenv": "^18.0.10",
     "env-schema": "^8.0.2",
